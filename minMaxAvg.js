@@ -23,32 +23,64 @@
 
 // fizzbuzz(15) would log the following (each element on its own line):
 
-function fizzbuzz(num){
-    for(let i = 1; i <= num; i++ ){
-            
-        if (i % 3 == 0 && i % 5 == 0){
-            console.log('FizzBuzz')
-        }
-        else if(i % 3 == 0){
-            console.log('Fizz')
-        }
-        else if(i % 5 == 0){
-            console.log('Buzz')
-        }
-        else{
-            console.log(i)
-        }
-        if (num < 0 || typeof num == "string"){
-            return console.log("Parameter must be a positive number.")
-        }
-    }
-}
+// function fizzbuzz(num){
+//     for(let i = 1; i <= num; i++ ){
 
-fizzbuzz(3)
-fizzbuzz(15)
-fizzbuzz(5)
-fizzbuzz('fizzybuzzy')
-fizzbuzz(-2)
+//         if (i % 3 == 0 && i % 5 == 0){
+//             console.log('FizzBuzz')
+//         }
+//         else if(i % 3 == 0){
+//             console.log('Fizz')
+//         }
+//         else if(i % 5 == 0){
+//             console.log('Buzz')
+//         }
+//         else{
+//             console.log(i)
+//         }
+//         if (num < 0 || typeof num == "string"){
+//             return console.log("Parameter must be a positive number.")
+//         }
+//     }
+// }
+
+// fizzbuzz(3)
+// fizzbuzz(15)
+// fizzbuzz(5)
+// fizzbuzz('fizzybuzzy')
+// fizzbuzz(-2)
 
 //---------------------
 
+// Example: bracesValid("{{()}}[]") returns true because the inner braces close before the outer braces. Each opening brace has a matching closing brace.
+
+// Example:  bracesValid("{(})") returns false because the curly braces close before the parentheses, which starts within the curly braces, had a chance to close.
+
+function bracesValid(braces){
+    let checkBraces = [];
+    let map = {
+        '(':')',
+        '{':'}',
+        '[':']'
+    }
+    for(let i = 0; i < braces.length; i++){
+        if (braces[i] == '(' || braces[i] == '{' || braces[i] == '['){
+            checkBraces.push(braces[i]);
+        }
+        else {
+            let checkClosing = checkBraces.pop();
+
+            if (braces[i] !== map[checkClosing]){
+                return false
+            }
+        }
+    }
+    if (checkBraces.length !== 0){
+        return false
+    }
+    return true
+}
+
+
+console.log(bracesValid("{{()}}[]"))
+console.log(bracesValid("{(})"))
