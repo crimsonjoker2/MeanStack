@@ -24,18 +24,23 @@
 // fizzbuzz(15) would log the following (each element on its own line):
 
 function fizzbuzz(num){
-    for(let i = 0; i < num; i++ )
-    if (i % 3 == 0 && i % 5 == 0){
-        console.log('FizzBuzz')
-    }
-    else if(i % 3 == 0){
-        console.log('Fizz')
-    }
-    else if(i % 5 == 0){
-        console.log('Buzz')
-    }
-    if (num < 0 || typeof num == "string"){
-        return console.log("Parameter must be a positive number.")
+    for(let i = 1; i <= num; i++ ){
+            
+        if (i % 3 == 0 && i % 5 == 0){
+            console.log('FizzBuzz')
+        }
+        else if(i % 3 == 0){
+            console.log('Fizz')
+        }
+        else if(i % 5 == 0){
+            console.log('Buzz')
+        }
+        else{
+            console.log(i)
+        }
+        if (num < 0 || typeof num == "string"){
+            return console.log("Parameter must be a positive number.")
+        }
     }
 }
 
@@ -44,3 +49,6 @@ fizzbuzz(15)
 fizzbuzz(5)
 fizzbuzz('fizzybuzzy')
 fizzbuzz(-2)
+
+//---------------------
+
