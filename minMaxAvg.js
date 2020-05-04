@@ -56,31 +56,48 @@
 
 // Example:  bracesValid("{(})") returns false because the curly braces close before the parentheses, which starts within the curly braces, had a chance to close.
 
-function bracesValid(braces){
-    let checkBraces = [];
-    let map = {
-        '(':')',
-        '{':'}',
-        '[':']'
-    }
-    for(let i = 0; i < braces.length; i++){
-        if (braces[i] == '(' || braces[i] == '{' || braces[i] == '['){
-            checkBraces.push(braces[i]);
-        }
-        else {
-            let checkClosing = checkBraces.pop();
+// function bracesValid(braces){
+//     let checkBraces = [];
+//     let map = {
+//         '(':')',
+//         '{':'}',
+//         '[':']'
+//     }
+//     for(let i = 0; i < braces.length; i++){
+//         if (braces[i] == '(' || braces[i] == '{' || braces[i] == '['){
+//             checkBraces.push(braces[i]);
+//         }
+//         else {
+//             let checkClosing = checkBraces.pop();
 
-            if (braces[i] !== map[checkClosing]){
-                return false
+//             if (braces[i] !== map[checkClosing]){
+//                 return false
+//             }
+//         }
+//     }
+//     if (checkBraces.length !== 0){
+//         return false
+//     }
+//     return true
+// }
+
+
+// console.log(bracesValid("{{()}}[]"))
+// console.log(bracesValid("{(})"))
+
+//------------------------------
+
+function bubbleSort(arr) {
+    for (i = 0; i < arr.length; i++) {
+        for (y = 0; y < arr.length - i; y++) {
+            if (arr[y] > arr[y + 1]) {
+                temp = arr[y]
+                arr[y] = arr[y + 1]
+                arr[y + 1] = temp
             }
         }
     }
-    if (checkBraces.length !== 0){
-        return false
-    }
-    return true
+    console.log(arr)
 }
 
-
-console.log(bracesValid("{{()}}[]"))
-console.log(bracesValid("{(})"))
+bubbleSort([5, 3, 1, 6, 7, 2, 8, 4])
