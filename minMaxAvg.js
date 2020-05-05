@@ -138,52 +138,52 @@
 // coinChange(78)
 // // coinChange({dollars: 2, dimes: 15, pennies: 5})
 
-function userLanguages(someArray) {
-    for (var i = 0; i < someArray.length; i++) {
-        for (var key in someArray[i]['interests']) {
-            int = someArray[i]['interests'][key];
-        }
-        name = someArray[i].fname + ' ' + someArray[i].lname
-        lang = someArray[i].languages
-        saying = name + " knows " + lang + "."
-        saying2 = name + " is also interested in " + int + "."
-        console.log(saying)
-        console.log(saying2)
-    }
-    return someArray
-}
-users = [
-    {
-        fname: "Kermit",
-        lname: "the Frog",
-        languages: ["Python", "JavaScript", "C#", "HTML", "CSS", "SQL"],
-        interests: {
-            music: ["guitar", "flute"],
-            dance: ["tap", "salsa"],
-            television: ["Black Mirror", "Stranger Things"]
-        }
-    },
-    {
-        fname: "Winnie",
-        lname: "the Pooh",
-        languages: ["Python", "Swift", "Java"],
-        interests: {
-            food: ["honey", "honeycomb"],
-            flowers: ["honeysuckle"],
-            mysteries: ["Heffalumps"]
-        }
-    },
-    {
-        fname: "Arthur",
-        lname: "Dent",
-        languages: ["JavaScript", "HTML", "Go"],
-        interests: {
-            space: ["stars", "planets", "improbability"],
-            home: ["tea", "yellow bulldozers"]
-        }
-    }
-]
-userLanguages(users)
+// function userLanguages(someArray) {
+//     for (var i = 0; i < someArray.length; i++) {
+//         for (var key in someArray[i]['interests']) {
+//             int = someArray[i]['interests'][key];
+//         }
+//         name = someArray[i].fname + ' ' + someArray[i].lname
+//         lang = someArray[i].languages
+//         saying = name + " knows " + lang + "."
+//         saying2 = name + " is also interested in " + int + "."
+//         console.log(saying)
+//         console.log(saying2)
+//     }
+//     return someArray
+// }
+// users = [
+//     {
+//         fname: "Kermit",
+//         lname: "the Frog",
+//         languages: ["Python", "JavaScript", "C#", "HTML", "CSS", "SQL"],
+//         interests: {
+//             music: ["guitar", "flute"],
+//             dance: ["tap", "salsa"],
+//             television: ["Black Mirror", "Stranger Things"]
+//         }
+//     },
+//     {
+//         fname: "Winnie",
+//         lname: "the Pooh",
+//         languages: ["Python", "Swift", "Java"],
+//         interests: {
+//             food: ["honey", "honeycomb"],
+//             flowers: ["honeysuckle"],
+//             mysteries: ["Heffalumps"]
+//         }
+//     },
+//     {
+//         fname: "Arthur",
+//         lname: "Dent",
+//         languages: ["JavaScript", "HTML", "Go"],
+//         interests: {
+//             space: ["stars", "planets", "improbability"],
+//             home: ["tea", "yellow bulldozers"]
+//         }
+//     }
+// ]
+// userLanguages(users)
 //-------- General sort concept -----//Not part of the assignments.
 // var numbers = [22,2,10,7,5,31];
 
@@ -192,3 +192,29 @@ userLanguages(users)
 // });
 // console.log(numbers);
 
+//-------------------
+
+function binarySearch(arr, x){
+    let beginning = 0, end = arr.length-1;
+
+    while(beginning <= end){
+        let mid = Math.floor((beginning + end)/2);
+        if (arr[mid] === x){
+            return true;
+        }
+        else if(x > arr[mid]){
+            beginning = mid + 1;
+        }
+        else{
+            end = mid - 1;
+            
+        }
+        
+    }
+    return false;
+}
+
+
+console.log(binarySearch([1, 3, 8, 10, 12, 15, 17, 20, 22, 34, 38, 40, 50, 52, 78, 87, 90, 91, 92, 94, 200], 93))
+
+console.log(binarySearch([1, 3, 8, 10, 12, 15, 17, 20, 22, 34, 38, 40, 50, 52, 78, 87, 90, 91, 92, 94], 15))
