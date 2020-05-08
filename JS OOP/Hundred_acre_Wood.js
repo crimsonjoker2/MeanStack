@@ -65,7 +65,8 @@ let bees = {
     }
 };
 let player = {
-    location: tigger
+    location: tigger,
+    honey: false
 
 }
 // console.log(player.location.character)
@@ -144,11 +145,37 @@ function move(direction) {
     }
     return console.log('You are now at ' + player.location.character + "'s house."), player.location.greet()
 }
+function pickUp() {
+    if (player.location.character == "Bees") {
+        player.honey = true
+        console.log("You picked up some honey!")
+    }
+    else {
+        console.log("There isn't any honey here!")
+    }
+}
+function drop() {
+    if (player.honey == true) {
+        if (player.location.character == "Whinney the Pooh") {
+            player.honey = false
+            console.log("Here is your honey Pooh!")
+        }
+        else{
+            console.log("Pooh isn't here.")
+        }
+    }
+    else{
+        console.log("You don't have anything to drop off.")
+    }
+}
 
 
 move('north');
-move('north');
 move('east');
-move('east');
-move('east');
+// move('east');
+// move('east');
+// move('west');
+pickUp();
 move('west');
+move('west');
+drop();
