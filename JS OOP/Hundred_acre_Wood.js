@@ -1,14 +1,69 @@
-let chris = { character: "Christopher Robin" };
-let kanga = { character: "Kanga" };
-let piglet = { character: "Piglet" };
-let tigger = { character: "Tigger" };
-let pooh = { character: "Whinney the Pooh" };
-let eeyore = { character: "Eeyore" };
-let heffalumps = { character: "Heffalumps" };
-let owl = { character: "Owl" };
-let rabbit = { character: "Rabbit" };
-let gopher = { character: "Gopher" };
-let bees = { character: "Bees" };
+let chris = {
+    character: "Christopher Robin",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let kanga = {
+    character: "Kanga",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let piglet = {
+    character: "Piglet",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let tigger = {
+    character: "Tigger",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let pooh = {
+    character: "Whinney the Pooh",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let eeyore = {
+    character: "Eeyore",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let heffalumps = {
+    character: "Heffalumps",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let owl = {
+    character: "Owl",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let rabbit = {
+    character: "Rabbit",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let gopher = {
+    character: "Gopher",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
+let bees = {
+    character: "Bees",
+    greet: function () {
+        console.log("Hello!")
+    }
+};
 let player = {
     location: tigger
 
@@ -87,7 +142,7 @@ function move(direction) {
         }
 
     }
-    return console.log('You are now at ' + player.location.character + "'s house.")
+    return console.log('You are now at ' + player.location.character + "'s house."), player.location.greet()
 }
 
 
