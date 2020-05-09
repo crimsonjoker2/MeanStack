@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <title>Document</title>
+</head>
+<body>
+  <button id="displayName">Github Info</button>
+  <p></p>
+
+
+
+  <script>
+    $(document).ready(function(){
+      $('#displayName').click(function displayName() {
+        $.get("https://api.github.com/users/crimsonjoker2", function displayName(data){
+          $('p').append(data.login);
+        });
+      })
+    // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+  });
+  </script>
+</body>
+
+</html>
