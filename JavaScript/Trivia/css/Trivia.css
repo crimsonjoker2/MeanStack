@@ -1,0 +1,17 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    width: 90rem;
+    height: 56rem;
+    margin: 1rem auto;
+    text-align: center;
+    border: 1px solid black;
+}
+.topBar{
+    display: inline-block;
+}
+.barContent{
+    display: inline-block;
+}
