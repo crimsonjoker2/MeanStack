@@ -17,6 +17,13 @@ app.get('/cars', (request, response)=>{
 app.get('/cats', (request, response)=>{
     response.render('cats')
 });
+app.get('/cats/1', (request, response)=>{
+    let cats_details=[
+        {name: 'Mumsy', age: '7'},
+        {name: 'Poppy', age: '5'} 
+    ]
+    response.render('details',{cats: cats_details})
+});
 app.get('/cars/new', (request, response)=>{
     response.render('newcar')
 });
